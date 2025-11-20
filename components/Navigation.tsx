@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { GlobalSearch } from './GlobalSearch'
 import { QuickNav } from './QuickNav'
 import { ComparisonTool } from './ComparisonTool'
-import { PriceRangeFilter } from './PriceRangeFilter'
 import {
   Home,
   DollarSign,
@@ -20,11 +19,11 @@ import {
 
 const navItems = [
   { name: 'Overview', href: '#overview', icon: Home },
-  { name: 'Pricing', href: '#pricing', icon: DollarSign },
-  { name: 'Features', href: '#features', icon: Package },
-  { name: 'Packages', href: '#attractions', icon: Gift },
+  { name: 'Packages', href: '#pricing', icon: Package },
+  { name: 'Features', href: '#features', icon: DollarSign },
+  { name: 'Special Offers', href: '#attractions', icon: Gift },
   { name: 'Add-Ons', href: '#upsells', icon: TrendingUp },
-  { name: 'Payment Plans', href: '#downsells', icon: TrendingDown },
+  { name: 'Payment Options', href: '#downsells', icon: TrendingDown },
   { name: 'Support', href: '#continuity', icon: RefreshCw },
 ]
 
@@ -68,7 +67,7 @@ export function Navigation() {
             <GlobalSearch />
             <QuickNav />
             <ComparisonTool />
-            <Button>Book a Demo</Button>
+            <Button>Schedule Consultation</Button>
           </div>
 
           {/* Mobile menu button */}

@@ -37,38 +37,16 @@ export function PricingCard({ tier, showComparison = false }: PricingCardProps) 
         <p className="text-muted-foreground text-sm">{tier.tagline}</p>
       </div>
 
-      {/* Pricing */}
+      {/* Package Highlights */}
       <div className="text-center mb-6 pb-6 border-b">
-        {tier.setupCost > 0 && (
-          <div className="mb-4">
-            <div className="text-sm text-muted-foreground mb-1">Setup</div>
-            <div className="text-3xl font-bold">
-              £{tier.setupCost.toLocaleString()}
-            </div>
+        <div className="space-y-2">
+          <div className="text-sm font-medium text-primary">
+            {tier.variant === 'complete' ? '✨ Full Platform Access' : tier.variant === 'foundation' ? '🚀 Essential Features' : '📊 Analytics Enhanced'}
           </div>
-        )}
-
-        <div>
-          <div className="text-sm text-muted-foreground mb-1">
-            {tier.setupCost === 0 ? 'Monthly' : 'Then'}
-          </div>
-          <div className="flex items-baseline justify-center gap-1">
-            <span className="text-4xl font-bold">
-              £{tier.monthlyCost.toLocaleString()}
-            </span>
-            <span className="text-muted-foreground">/month</span>
+          <div className="text-muted-foreground text-sm">
+            Perfect for {tier.variant === 'complete' ? 'scaling businesses' : tier.variant === 'foundation' ? 'getting started' : 'data-driven teams'}
           </div>
         </div>
-
-        {/* First Year Total */}
-        {tier.setupCost > 0 && (
-          <div className="mt-4 pt-4 border-t">
-            <div className="text-xs text-muted-foreground">First Year Total</div>
-            <div className="text-lg font-semibold text-primary">
-              £{firstYearTotal.toLocaleString()}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Features Included */}
@@ -125,7 +103,7 @@ export function PricingCard({ tier, showComparison = false }: PricingCardProps) 
         }`}
         variant={tier.isPopular ? 'default' : 'outline'}
       >
-        {tier.cta}
+        Learn More About This Package
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
 

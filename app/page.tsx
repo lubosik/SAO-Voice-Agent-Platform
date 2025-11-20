@@ -21,32 +21,32 @@ export default function Home() {
             SAO Voice Agent Platform
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Complete AI Voice Agent Platform with Transparent Pricing
+            Explore our comprehensive AI Voice Agent solutions designed to scale your business
           </p>
           <div className="flex gap-4 justify-center mb-12">
             <Button size="lg" asChild>
-              <a href="#pricing">View Pricing</a>
+              <a href="#pricing">Explore Packages</a>
             </Button>
-            <Button size="lg" variant="outline">Book a Demo</Button>
+            <Button size="lg" variant="outline">Schedule Consultation</Button>
           </div>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-16">
             <div className="p-4 rounded-lg bg-gradient-to-br from-primary/10 to-chart-2/10 border border-primary/20">
               <div className="text-3xl font-bold text-primary mb-1">
-                {pricingSummary.complete.features}
+                {pricingSummary.complete.features}+
               </div>
-              <div className="text-sm text-muted-foreground">Features in Complete</div>
+              <div className="text-sm text-muted-foreground">Premium Features</div>
             </div>
             <div className="p-4 rounded-lg bg-gradient-to-br from-chart-2/10 to-chart-3/10 border border-chart-2/20">
               <div className="text-3xl font-bold text-chart-2 mb-1">
-                £{(pricingSummary.complete.savings / 1000).toFixed(0)}k
+                9
               </div>
-              <div className="text-sm text-muted-foreground">Savings vs Individual</div>
+              <div className="text-sm text-muted-foreground">Package Options</div>
             </div>
             <div className="p-4 rounded-lg bg-gradient-to-br from-chart-4/10 to-chart-5/10 border border-chart-4/20">
-              <div className="text-3xl font-bold text-chart-4 mb-1">30</div>
-              <div className="text-sm text-muted-foreground">Days Notice to Cancel</div>
+              <div className="text-3xl font-bold text-chart-4 mb-1">24/7</div>
+              <div className="text-sm text-muted-foreground">Platform Availability</div>
             </div>
           </div>
         </section>

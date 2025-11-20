@@ -111,14 +111,14 @@ export function FeatureCard({ feature, onAddToBundle, isInBundle = false }: Feat
           <p className="text-sm text-muted-foreground">{feature.description}</p>
         </div>
 
-        {/* Pricing */}
+        {/* Feature Highlight */}
         <div className="mb-4 p-4 bg-gradient-to-br from-primary/5 to-chart-2/5 rounded-lg border border-primary/10">
-          <div className="text-2xl font-bold text-primary mb-1">
-            {formatPrice()}
+          <div className="text-sm font-semibold text-primary mb-1">
+            {feature.standaloneSellable ? '✨ Available Separately' : '📦 Package Feature'}
           </div>
-          {feature.pricing.volumeTiers && feature.pricing.volumeTiers.length > 0 && (
-            <p className="text-xs text-muted-foreground">Volume-based pricing available</p>
-          )}
+          <p className="text-xs text-muted-foreground">
+            {feature.standaloneSellable ? 'Can be added to any package' : 'Included in select packages'}
+          </p>
         </div>
 
         {/* What It Is & Why Valuable */}
@@ -172,60 +172,17 @@ export function FeatureCard({ feature, onAddToBundle, isInBundle = false }: Feat
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="market" className="border-none">
+          <AccordionItem value="usecases" className="border-none">
             <AccordionTrigger className="text-sm font-semibold py-2 hover:no-underline">
-              Market Comparison
+              Best For
             </AccordionTrigger>
             <AccordionContent>
-              <div className="space-y-2 text-sm">
-                <div>
-                  <span className="font-medium">Competitors:</span>{' '}
-                  <span className="text-muted-foreground">
-                    {feature.marketComparison.competitors.join(', ')}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-medium">Market Range:</span>{' '}
-                  <span className="text-muted-foreground">
-                    {feature.marketComparison.priceRange}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-medium">Our Position:</span>{' '}
-                  <span className="text-muted-foreground">
-                    {feature.marketComparison.positioning}
-                  </span>
-                </div>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="hormozi" className="border-none">
-            <AccordionTrigger className="text-sm font-semibold py-2 hover:no-underline">
-              Value Stack Insight
-            </AccordionTrigger>
-            <AccordionContent>
-              <p className="text-sm text-muted-foreground italic">
-                "{feature.hormoziApplication}"
+              <p className="text-sm text-muted-foreground">
+                {feature.whyValuable}
               </p>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-
-        {/* Volume Tiers (if applicable) */}
-        {feature.pricing.volumeTiers && feature.pricing.volumeTiers.length > 0 && (
-          <div className="mb-4 p-3 bg-muted/30 rounded-lg">
-            <div className="text-xs font-semibold mb-2">Volume Pricing</div>
-            <div className="space-y-1">
-              {feature.pricing.volumeTiers.map((tier, index) => (
-                <div key={index} className="flex justify-between text-xs">
-                  <span className="text-muted-foreground">{tier.label}</span>
-                  <span className="font-semibold">£{tier.price.toLocaleString()}/mo</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* CTA */}
         <div className="mt-auto pt-4">
