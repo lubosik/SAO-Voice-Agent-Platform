@@ -41,10 +41,10 @@ export function PricingCard({ tier, showComparison = false }: PricingCardProps) 
       <div className="text-center mb-6 pb-6 border-b">
         <div className="space-y-2">
           <div className="text-sm font-medium text-primary">
-            {tier.variant === 'complete' ? '✨ Full Platform Access' : tier.variant === 'foundation' ? '🚀 Essential Features' : '📊 Analytics Enhanced'}
+            {tier.id === 'complete' || tier.id === 'complete-rolling' ? '✨ Full Platform Access' : tier.id === 'foundation' || tier.id === 'foundation-rolling' ? '🚀 Essential Features' : '📊 Analytics Enhanced'}
           </div>
           <div className="text-muted-foreground text-sm">
-            Perfect for {tier.variant === 'complete' ? 'scaling businesses' : tier.variant === 'foundation' ? 'getting started' : 'data-driven teams'}
+            Perfect for {tier.id === 'complete' || tier.id === 'complete-rolling' ? 'scaling businesses' : tier.id === 'foundation' || tier.id === 'foundation-rolling' ? 'getting started' : 'data-driven teams'}
           </div>
         </div>
       </div>
